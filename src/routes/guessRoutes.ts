@@ -1,15 +1,10 @@
-import { PrismaClient } from '@prisma/client';
+import { FastifyInstance } from 'fastify';
+import { prisma } from '../lib/prisma';
 
-const prisma = new PrismaClient({
-  log: ['query'],
-});
-
-export default function userRoutes(fastify, options, next) {
+export default async function userRoutes(fastify: FastifyInstance) {
   fastify.get('/guesses/count', async (req, rep) => {
     const count = await prisma.guess.count();
 
     return { count };
   });
-
-  next();
 }

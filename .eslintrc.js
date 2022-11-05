@@ -2,16 +2,26 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    es6: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-unresolved': 'off',
+    camelcase: 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
   },
 };

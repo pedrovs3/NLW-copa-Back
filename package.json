@@ -15,6 +15,8 @@
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^9.1.7",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
     "eslint": "^8.26.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
@@ -28,6 +30,7 @@
   },
   "dependencies": {
     "@fastify/cors": "^8.1.1",
+    "@fastify/jwt": "^6.3.2",
     "@prisma/client": "^4.5.0",
     "fastify": "^4.9.2",
     "prettier": "^2.7.1",
