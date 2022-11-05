@@ -6,6 +6,7 @@ import poolsRoutes from './routes/poolsRoutes';
 import userRoutes from './routes/userRoutes';
 import guessesRoutes from './routes/guessRoutes';
 import { authRoute } from './routes/authRoute';
+import { gameRoutes } from './routes/gameRoutes';
 
 env.config();
 
@@ -33,6 +34,7 @@ class App {
   routes() {
     this.fastify.register(poolsRoutes);
     this.fastify.register(userRoutes);
+    this.fastify.register(gameRoutes);
     this.fastify.register(guessesRoutes);
     this.fastify.register(authRoute);
   }
