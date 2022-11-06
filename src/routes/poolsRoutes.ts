@@ -74,13 +74,16 @@ export default async function poolsRoutes(fastify: FastifyInstance) {
         reply.status(400).send({ message: 'Pool not found.' });
       }
 
+      // @ts-ignore
       if (pool.participants.length > 0) {
         reply.status(400).send({ message: 'You already joined this pool.' });
       }
 
+      // @ts-ignore
       if (!pool.ownerId) {
         await prisma.pool.update({
           where: {
+            // @ts-ignore
             id: pool.id,
           },
           data: {
@@ -91,6 +94,7 @@ export default async function poolsRoutes(fastify: FastifyInstance) {
 
       await prisma.participant.create({
         data: {
+          // @ts-ignore
           poolId: pool.id,
           userId: request.user.sub,
         },

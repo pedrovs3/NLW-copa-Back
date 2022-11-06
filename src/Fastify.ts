@@ -1,7 +1,7 @@
 import Fastify, { FastifyInstance } from 'fastify';
 import env from 'dotenv';
-import cors from '@fastify/cors';
 import jwt from '@fastify/jwt';
+import cors from '@fastify/cors';
 import poolsRoutes from './routes/poolsRoutes';
 import userRoutes from './routes/userRoutes';
 import guessesRoutes from './routes/guessRoutes';
@@ -17,7 +17,7 @@ class App {
     this.fastify = Fastify({
       logger: true,
     });
-    this.middlewares();
+    this.middlewares().then((r) => r);
     this.routes();
   }
 

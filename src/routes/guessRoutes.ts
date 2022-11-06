@@ -10,6 +10,25 @@ export default async function userRoutes(fastify: FastifyInstance) {
     return { count };
   });
 
+  fastify.get('/user/pool/:poolId/guesses', { onRequest: [authenticate] }, async (req, rep) => {
+    const setUserParams = z.object({
+      poolId: z.string(),
+    });
+
+    const { poolId } = setUserParams.parse(req.params);
+
+    const guesses = await prisma.guess.findMany({
+      where: {
+        participant: {
+          userId: req.user.sub,
+          poolId,
+        },
+      },
+    });
+
+    return { guesses };
+  });
+
   fastify.post(
     '/pools/:poolId/games/:gameId/guesses',
     { onRequest: [authenticate] },
