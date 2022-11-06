@@ -3,15 +3,15 @@
   "builds": [
     {
       "src": "/dist/server.js",
-      "use": "@vercel/node"
+      "use": "@now/node"
     }
   ],
   "routes": [
     {
       // Specify which paths will route to a destination using a regex
-      "src": "/(.*)",
+      "src": "/dist/routes/*.js",
       // Specify the paths' destination
-      "dest": "./"
+      "dest": "index.js"
     }
   ]
 }
