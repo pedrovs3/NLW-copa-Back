@@ -40,4 +40,14 @@ class App {
   }
 }
 
-export default new App().fastify;
+const app = new App().fastify;
+
+const run = async () => {
+  try {
+    await app.listen({ port: 3333, host: '0.0.0.0' });
+  } catch (e) {
+    process.exit(1);
+  }
+};
+
+run();

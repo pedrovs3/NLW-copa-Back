@@ -5,7 +5,9 @@
   "main": "./dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch src/server.ts",
+    "dev": "tsx watch src/Fastify.ts",
+    "start": "vercel dev",
+    "deploy": "vercel deploy --prod",
     "build": "npx tsc"
   },
   "keywords": [],
@@ -27,7 +29,8 @@
     "prisma": "^4.5.0",
     "prisma-erd-generator": "^1.2.2",
     "tsx": "^3.11.0",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "vercel": "^28.4.14"
   },
   "dependencies": {
     "@fastify/cors": "^8.1.1",
