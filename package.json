@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx watch src/Fastify.ts",
     "start": "vercel dev",
-    "deploy": "vercel deploy --prod",
-    "build": "npx tsc"
+    "deploy": "node build/Fastify.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "Pedro Vieira",
