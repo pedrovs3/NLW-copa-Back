@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx watch src/Fastify.ts",
-    "start": "vercel dev",
-    "deploy": "node build/Fastify.ts",
+    "start": "node build/Fastify.ts",
+    "vercel": "vercel dev",
     "build": "tsc"
   },
   "keywords": [],
